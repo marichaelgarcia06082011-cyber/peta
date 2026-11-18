@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 45px 15px;
+            background: linear-gradient(135deg, #001f54, #0066cc, #4da6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 100%;
+            max-width: 750px;
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #003b82, #007bff);
+            color: white;
+            text-align: center;
+            padding: 35px 25px;
+        }
+
+        .header h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #e0edff;
+            line-height: 1.6;
+        }
+
+        .header-line {
+            width: 65px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 10px;
+            margin: 18px auto 0;
+        }
+
+        .form-content {
+            padding: 35px;
+        }
+
+        .section-title {
+            color: #004b9b;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5efff;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #26364a;
+            margin-bottom: 8px;
+        }
+
+        .required {
+            color: #e63946;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1.5px solid #d5deea;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #26364a;
+            background: #f9fbff;
+            transition: 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.12);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #9aa8b8;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input[type="file"] {
+            background: #f0f6ff;
+            border: 1.5px dashed #8abaff;
+            cursor: pointer;
+        }
+
+        input[type="file"]::file-selector-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 9px 12px;
+            border-radius: 5px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .note {
+            background: #eef6ff;
+            border-left: 4px solid #007bff;
+            padding: 13px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #45617f;
+            line-height: 1.6;
+            margin-top: 12px;
+        }
+
+        .btn-center {
+            margin-top: 30px;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0056b3, #0084ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #003b82, #0066cc);
+            box-shadow: 0 6px 15px rgba(0, 86, 179, 0.25);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            background: #f3f7fc;
+            text-align: center;
+            padding: 18px;
+            color: #718096;
+            font-size: 12px;
+            border-top: 1px solid #e5edf6;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 28px 18px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .form-content {
+                padding: 23px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+
+        <div class="header">
+            <h1>Job Application Form</h1>
+            <p>Start your professional journey with us.</p>
+            <p>Please complete the form below with accurate information.</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="form-content">
+
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <div class="section">
+                    <h2 class="section-title">01. Personal Information</h2>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="firstname">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age <span class="required">*</span></label>
+                            <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="100" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">02. Address Information</h2>
+
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+                            <label for="address">Complete Address <span class="required">*</span></label>
+                            <textarea id="address" name="address" placeholder="House number, Street, Barangay" required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="city">City / Municipality <span class="required">*</span></label>
+                            <input type="text" id="city" name="city" placeholder="Enter your city or municipality" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">03. Job Information</h2>
+
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+                            <label for="position">Position Applying For <span class="required">*</span></label>
+
+                            <select id="position" name="position" required>
+                                <option value="">-- Select a Position --</option>
+                                <option value="encoder">Data Encoder</option>
+                                <option value="staff">Office Staff</option>
+                                <option value="assistant">Admin Assistant</option>
+                                <option value="intern">Work Immersion / Intern</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="startdate">Available Start Date <span class="required">*</span></label>
+                            <input type="date" id="startdate" name="startdate" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">04. Application Documents</h2>
+
+                    <div class="form-group">
+                        <label for="resume">Upload Resume / CV</label>
+
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+                        <div class="note">
+                            Accepted file formats: PDF, DOC, and DOCX.
+                            Please upload your latest resume or curriculum vitae.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-center">
+                  <a href="page3.html" class="btn-center">
+                  <button type="submit">SUBMIT APPLICATION</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="footer">
+            © 2026 Job Application Form | All Rights Reserved
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+  @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 28px 18px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .form-content {
+                padding: 23px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+
+            .closing-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="closing-box" id="thank-you">
+
+        <div class="header">
+            <div class="check-icon">✓</div>
+
+            <h1>Application Submitted!</h1>
+
+            <p>Thank you for taking the time to apply.</p>
+        </div>
+
+        <div class="closing-content">
+
+            <h2>Thank You for Your Interest!</h2>
+
+            <p>
+                Your job application has been successfully submitted.
+                We appreciate your interest in becoming part of our team.
+            </p>
+
+            <p>
+                Our recruitment team will review your application.
+                If your qualifications match our requirements,
+                we will contact you regarding the next steps.
+            </p>
+
+            <div class="closing-notice">
+                <strong>What's Next?</strong><br>
+                Please keep your contact information active and
+                check your email regularly for possible updates
+                regarding your application.
+            </div>
+
+            <a href="peta.html" class="home-btn">
+                BACK TO APPLICATION FORM
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © 2026 Job Application Form | All Rights Reserved
+        </div>
+</div>
+
+    <style>
+        #thank-you:target {
+            display: block;
+        }
+
+        #thank-you:target ~ #application {
+            display: none;
+        }
+
+        body:has(#thank-you:target) #application {
+            display: none;
+        }
+    </style>
+
+</body>
+</html>
